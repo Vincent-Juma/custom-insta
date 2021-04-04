@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-from decouple import config,Csv
+# from decouple import config,Csv
 DATABASES = {'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))}
  
 db_from_env = dj_database_url.config(conn_max_age=500)
@@ -30,7 +30,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('7d5b442e312e773fe24c4c307d0acfb9ac95ff7e548028d7e34dfbf81fc00ab2')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
-    'django.contrib.contenttypes',
+    'django.contrib.contenttypes
+    ',
     'django.contrib.sessions',
     'django.contrib.messages',
     'imagegallery.apps.ImagegalleryConfig',
