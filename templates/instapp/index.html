@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for post in  posts %}
+<div class="card1">
+    <div class="card-header">
+      <img class="user-image" src="{{post.author.profile.image.url}}" />
+      <a href="{% url 'profile' %}"><p class="user-name">{{ post.author }}</p></a>
+    </div>
+    <div class="card-image">
+      <img src="{{ post.image.url}}" class="img-fluid myimage2" width="100%" />
+    </div>
+    <div class="card-content">
+        <a href="#" class= "action-icons"><i class="fa fa-heart-o"></i></a>
+      <p class= "likes">10,905 likes </p>
+      <p>{{ post.content }}</p>
+      <hr>
+
+<div class="border-top">
+    {% for comment in post.comments.all %}
+    <p>
+    <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+    {{ comment }}
+    </p>
+    {% endfor %}
+  </div>
+    </div>
+    <div class="card-actions">
+      <input class="comments-input" type="text" placeholder="Add a comment..." />
+      <a href="#" class="action-icons"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
+    <p class="">{{ post.date_posted|timesince}}</p>
+  </div>
+  
+  {% endfor %}
+{% endblock content %}
+
+
+
+
+

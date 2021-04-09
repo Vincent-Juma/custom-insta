@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card1">
+    <div class="card-header">
+      <img class="user-image" src="{{post.image}}" />
+      <p class="user-name">{{ post.author }}</p>
+      <p class="time">{{ post.date_posted|date:"F d, Y" }}</p>
+    </div>
+    <div class="card-image">
+      <img src="{{ post.image}}" width="100%" />
+    </div>
+    <div class="card-content">
+      <p class= "likes">10,905 likes </p>
+      <p>{{ post.content }}</p>
+      <hr>
+    </div>
+    <div class="card-actions">
+      <a href="#" class= "action-icons"><i class="fa fa-heart-o"></i></a>
+      <input class="comments-input" type="text" placeholder="Add a comment..." />
+      <a href="#" class="action-icons"><i class="fa fa-ellipsis-h"></i></a>
+    </div>
+  </div>
+{% endblock content %}

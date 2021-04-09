@@ -1,0 +1,78 @@
+{% extends "registration/base.html" %} 
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="mylogin1 mylogin2">
+    <span id="root">
+        <section class="section-all">
+          <!-- 1-Role Main -->
+          <main class="main" role="main">
+            <div class="wrapper">
+              <article class="article">
+                <div class="content">
+                  <div class="login-box">
+                    <div class="header">
+                      <div class="text-center">
+                        <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png" alt="Instagram" style="color: brown;">
+                      </div>
+                      <h2 class="col1">Log in or Sign up to see photos and videos of your friends</h2>
+                      <span class="button-box">
+                          <button class="btn" type="submit" name="submit">Log in with Email Address</button>
+                        </span> 
+                        <h2 class="text-center myor"><span><small>OR</small> </span></h2> 
+                        <span class="button-box">
+                          <button class="btn" type="submit" name="submit">Log in with Phone Number</button>
+                        </span>   
+                    </div><!-- Header end -->
+                    <div class="form-wrap">
+                      <form class="form" method="POST">
+                        <div class="card m-3 p-3 border-0">
+                            {% csrf_token %}
+                            {{ form }}
+                          </div>
+                        <span class="button-box">
+                          <button class="btn" type="submit" name="submit">Sign Up</button>
+                        </span>  
+                      </form>
+                    </div> <!-- Form-wrap end -->
+                  </div> <!-- Login-box end -->
+    
+                  <div class="login-box">
+                    <p class="text">Already Have An Account? <a href="{% url 'login' %}">Log In</a></p>
+                  </div> <!-- Signup-box end -->
+    
+                  <div class="app">
+                    <p>Download App</p>
+                    <div class="app-img">
+                      <a href="https://itunes.apple.com/app/instagram/id389801252?pt=428156&amp;ct=igweb.loginPage.badge&amp;mt=8">
+                        <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_ios_english-en.png/4b70f6fae447.png" >
+                      </a>
+                      <a href="https://play.google.com/store/apps/details?id=com.instagram.android&amp;referrer=utm_source%3Dinstagramweb%26utm_campaign%3DloginPage%26utm_medium%3Dbadge">
+                        <img src="https://www.instagram.com/static/images/appstore-install-badges/badge_android_english-en.png/f06b908907d5.png">
+                      </a>  
+                    </div>  <!-- App-img end-->
+                  </div> <!-- App end -->
+                </div> <!-- Content end -->
+              </article>
+            </div> <!-- Wrapper end -->
+          </main>
+    
+          <!-- 2-Role Footer -->
+          <footer class="footer myfoot2" role="contentinfo" style="text-align: center;">
+            <div class="footer-container">
+                    <p>from Facebook</p>
+              <nav class="footer-nav" role="navigation">
+                <ul>
+                  
+                  <li>
+                  </li>
+                </ul>
+              </nav>
+    
+              <span class="footer-logo">&copy; @2021 Inst</span>
+            </div> <!-- Footer container end -->
+          </footer>
+          
+        </section>
+      </span> 
+</div>
+{% endblock %}
